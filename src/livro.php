@@ -25,5 +25,18 @@
       }
 
     }
+    function lerLivro($conexao) {
+      $conexao->conctar();
+
+      $sql = "select * from Livro where id=".$this->id;
+
+      $resultado = $conexao->con->query($sql);
+
+      if($resultado->num_rows > 0) {
+        return $resultado;
+      } else {
+        return false;
+      }
+    }
   }
 ?>
